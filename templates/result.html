@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SLR</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+ body {
+            background-image: url(https://about.grabyo.com/wp-content/uploads/2022/08/virtual-event-report-header.png);
+            background-color: rgba(95, 204, 251, 0.463);
+        }
+
+        nav {
+            background-color: rgba(16, 3, 76, 0.708);
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            font-family: fantasy;
+        }
+        .a2 {
+            color: rgb(104, 231, 231);
+            text-decoration: none;
+            padding: 5px;
+            margin-right: 45px;
+            font-size: large;
+        }
+
+        .a1 {
+            color: rgb(108, 158, 243);
+            font-size: x-large;
+        }
+        button{
+            padding: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 70px;
+            border: 2px solid rgb(0, 168, 79);
+            font-size: x-large;
+            background-color: rgba(61, 240, 156, 0.24);
+            color: rgb(0, 168, 79);
+
+
+        }
+
+        button:hover {
+            background-color: rgb(0, 174, 90);
+            color:aliceblue;
+            cursor: pointer;
+        }
+        .res {
+            background-color: rgba(14, 26, 122, 0.68);
+            margin: 50px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: large;
+            font-family: cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .sub{
+        
+            display: flex;
+            justify-content: center;
+        
+        }
+        textarea{
+            border-radius: 5px;
+            border: 2px solid rgb(0, 0, 255);
+            background-color: rgba(206, 231, 255, 0.24);
+            font-size:xx-large;
+        }
+        .footer {
+            background-color: rgba(16, 3, 76, 0.708);
+            color: rgb(108, 158, 243);
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 3px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+    <nav>
+            <a class="a1">Sign Language Recognition Using Machine
+                Learing</a>
+            <a class="a2" href="/">Home</a>
+        </nav>
+
+    <div class="res">
+ <h3>Text Recognized by the model :  </h3>
+ <textarea id="text" style="height: 300px;">{{result}}</textarea>
+</div>
+
+<script>
+function sendwhatsapp(){
+    var phoneNumber = prompt("Enter phone number");
+    console.log(phoneNumber);
+    var textarea = document.getElementById('text');
+    var res=textarea.outerHTML;
+    let res2 = res.replace("</textarea>", "");
+    let text = res2.substr(43);
+    var url="https://wa.me/91"+phoneNumber+"?text="+text;
+    console.log(url);
+    
+    window.open(url,'_blank').focus();
+}
+
+
+
+</script>
+<div class="sub">
+<button onclick="sendwhatsapp()"> Send via WhatsApp</button>
+</div>
+
+<div class="footer">Created by Group-171: Abhishek Rajput and Ankur
+    Singh</div>
+</div>
+    </body>
+
+</html>
